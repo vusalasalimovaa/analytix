@@ -1,0 +1,319 @@
+.about-us {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  // overflow: hidden;
+  max-width: 1260px;
+  margin: auto;
+
+  .abt-us {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+    h1 {
+      font-size: 70px;
+
+      span {
+        color: #51bfa6;
+      }
+    }
+  }
+
+  .about-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+    .grid-items {
+      img {
+        width: 620px;
+        height: 620px;
+        margin-left: 50px;
+      }
+
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 19px;
+        font-weight: 400;
+        margin-top: 30px;
+        width: 100%;
+        margin-bottom: 30px;
+        line-height: 30px;
+      }
+
+      h4 {
+        font-size: 30px;
+        font-weight: 600;
+      }
+
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        padding: 15px;
+        width: 100%;
+        line-height: 25px;
+        letter-spacing: 1px;
+        font-weight: 400;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      .click {
+        padding: 10px;
+        width: 200px;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        a {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        span {
+          font-size: 25px;
+        }
+
+        .arrow {
+          font-size: 35px;
+        }
+
+        &:hover {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .about-us {
+    .abt-us {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 10px;
+      padding-top: 6px;
+      h1 {
+        font-size: 25px;
+        padding-top: 27px;
+      }
+    }
+
+    .about-page {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .grid-items {
+        width: 100%;
+        img {
+          display: none;
+        }
+
+        .subtitle {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          h3 {
+            font-size: 17px;
+            padding-left: 12px;
+            font-weight: 400;
+            width: 100%;
+            line-height: 26px;
+          }
+        }
+
+        h4 {
+          font-size: 23px;
+          font-weight: 600;
+          padding-left: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          padding: 15px;
+          padding-bottom: 0;
+          width: 100%;
+          line-height: 22px;
+          letter-spacing: 1px;
+          font-weight: 400;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .click {
+          display: flex;
+          align-items: center;
+          padding: 10px 15px;
+
+          span {
+            font-size: 20px;
+          }
+
+          .arrow {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 980px) {
+  .about-us {
+    .abt-us {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 10px;
+      padding-top: 25px;
+      h1 {
+        font-size: 35px;
+      }
+    }
+
+    .about-page {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .grid-items {
+        width: 100%;
+        img {
+          display: none;
+        }
+
+        .subtitle {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          h3 {
+            font-size: 18px;
+            padding-left: 12px;
+            font-weight: 400;
+            width: 90%;
+            line-height: 27px;
+          }
+        }
+
+        h4 {
+          font-size: 25px;
+          font-weight: 600;
+          padding-left: 10px;
+        }
+
+        p {
+          font-size: 17px;
+          padding: 15px;
+          padding-bottom: 0;
+          width: 90%;
+          line-height: 23px;
+          letter-spacing: 1px;
+          font-weight: 400;
+          margin-bottom: 20px;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .click {
+          display: flex;
+          align-items: center;
+          padding: 15px 15px;
+
+          span {
+            font-size: 23px;
+          }
+
+          .arrow {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1300px) {
+  .about-us {
+    .abt-us {
+      padding-left: 20px;
+      h1 {
+        font-size: 60px;
+        padding-top: 3px;
+      }
+    }
+
+    .about-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .grid-items {
+        width: 100%;
+        img {
+          width: 520px;
+          height: 520px;
+          margin-left: 40px;
+          margin-top: 50px;
+        }
+
+        .subtitle {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          h3 {
+            font-size: 18px;
+            padding-left: 12px;
+            font-weight: 400;
+            width: 100%;
+            line-height: 27px;
+          }
+        }
+
+        h4 {
+          font-size: 25px;
+          font-weight: 600;
+          padding-left: 10px;
+        }
+
+        p {
+          font-size: 17px;
+          padding: 15px;
+          padding-bottom: 0;
+          width: 100%;
+          line-height: 23px;
+          letter-spacing: 1px;
+          font-weight: 400;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .click {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+          padding: 15px 15px;
+          width: 200px;
+
+          span {
+            font-size: 25px;
+          }
+
+          .arrow {
+            font-size: 27px;
+          }
+        }
+      }
+    }
+  }
+}

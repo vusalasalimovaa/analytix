@@ -1,0 +1,380 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .navbar {
+    height: 100px;
+
+    .wrapper {
+      max-width: 1260px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+
+      .logo {
+        font-weight: bold;
+        font-size: 23px;
+        letter-spacing: 2px;
+      }
+
+      .contact-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        .cont {
+          font-size: 18px;
+        }
+
+        .button-wrapper {
+          position: relative;
+          right: 0;
+          top: -26px;
+          width: 60px;
+
+          .button {
+            position: fixed;
+            width: 52px;
+            height: 52px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 600;
+
+            .burger {
+              width: 100%;
+              &::after,
+              &::before {
+                content: "";
+                display: block;
+                width: 40%;
+                background-color: black;
+                height: 1.3px;
+                margin: auto;
+                position: relative;
+                transition: all 0.3s;
+              }
+
+              &::after {
+                top: -5px;
+              }
+
+              &::before {
+                top: 5px;
+              }
+            }
+
+            .burgerActive {
+              &::after {
+                top: -1px;
+                transform: rotate(45deg);
+              }
+              &::before {
+                top: 1px;
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hero-background {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: filter 0.3s ease;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+      url(../../assets/images/heropic.png);
+
+    &.blur {
+      filter: blur(3px);
+    }
+  }
+
+  .hero-content {
+    max-width: 1260px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 35px;
+    }
+
+    .find-out {
+      font-family: "Montserrat", sans-serif;
+      padding: 15px 18px;
+      background: transparent;
+      border: none;
+      color: white;
+      border: 1px solid white;
+      border-radius: 10px;
+      transition: all 0.5s;
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        color: #000;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: white;
+        transition: 0.4s all ease-in-out 0s;
+        border-radius: 8px;
+      }
+    }
+
+    .find-out-hover::before {
+      left: unset;
+      right: 0;
+      width: 0;
+    }
+
+    .find-out-hover:hover::before {
+      right: unset;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .scroll {
+    position: absolute;
+    left: 80px;
+    bottom: 50px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 426px) {
+  .hero {
+    .navbar {
+      .wrapper {
+        max-width: 400px;
+        .logo {
+          font-size: 18px;
+        }
+
+        .contact-menu {
+          .cont {
+            display: none;
+          }
+
+          .vertical-line {
+            display: none;
+          }
+
+          .button-wrapper {
+            top: -24px;
+
+            .button {
+              right: 0;
+              width: 50px;
+              height: 50px;
+              background-color: transparent;
+
+              .burger {
+                &::after,
+                &::before {
+                  width: 50%;
+                  background-color: #fff;
+                }
+
+                &::after {
+                  top: -7px;
+                }
+
+                &::before {
+                  top: 5px;
+                }
+              }
+
+              .burgerActive {
+                &::after {
+                  background-color: #000;
+                  top: -1px;
+                  transform: rotate(45deg);
+                }
+                &::before {
+                  background-color: #000;
+                  top: 1px;
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hero-background {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+        url(../../assets/images/herooMob.png);
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 400px;
+
+      p {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 8px;
+      }
+
+      .find-out {
+        padding: 15px 10px;
+        font-size: 16px;
+      }
+    }
+
+    .scroll {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 769px) {
+  .hero {
+    .navbar {
+      .wrapper {
+        max-width: 700px;
+        .logo {
+          font-size: 20px;
+        }
+
+        .contact-menu {
+          .cont {
+            display: none;
+          }
+
+          .vertical-line {
+            display: none;
+          }
+
+          .button-wrapper {
+            top: -24px;
+
+            .button {
+              width: 50px;
+              height: 50px;
+              background-color: transparent;
+
+              .burger {
+                &::after,
+                &::before {
+                  width: 50%;
+                  background-color: #fff;
+                }
+
+                &::after {
+                  top: -7px;
+                }
+
+                &::before {
+                  top: 5px;
+                }
+              }
+
+              .burgerActive {
+                &::after {
+                  background-color: #000;
+                  top: -1px;
+                  transform: rotate(45deg);
+                }
+                &::before {
+                  background-color: #000;
+                  top: 1px;
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hero-content {
+      width: 70%;
+
+      p {
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      .find-out {
+        padding: 15px 16px;
+        font-size: 16px;
+      }
+    }
+
+    .scroll {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1025px) {
+  .hero {
+    .navbar {
+      .wrapper {
+        max-width: 900px;
+      }
+    }
+
+    .hero-content {
+      p {
+        font-size: 20px;
+        line-height: 33px;
+      }
+
+      .find-out {
+        padding: 15px 19px;
+        font-size: 16px;
+      }
+    }
+
+    .scroll {
+      left: 60px;
+    }
+  }
+}

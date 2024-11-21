@@ -1,0 +1,19 @@
+.preloader{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, #0e3437, #0a2c33, #08252e, #091d28, #081621, #07121d, #050e1a, #030816, #030715, #030615, #030614, #030513);
+    color: #51bfa6;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img{
+        width: 300px;
+    }
+}

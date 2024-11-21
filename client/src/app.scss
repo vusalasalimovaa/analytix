@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Nohemi";
+  src: url(./assets/fonts/Nohemi-Medium-BF6438cc5883899.ttf);
+}
+
+@font-face {
+  font-family: "Nohemi SemiBold";
+  src: url(./assets/fonts/Nohemi-SemiBold-BF6438cc588a48a.ttf);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+body {
+  color: #fff;
+  background-image: linear-gradient(
+    to right bottom,
+    #0e3437,
+    #0a2c33,
+    #08252e,
+    #091d28,
+    #081621,
+    #07121d,
+    #050e1a,
+    #030816,
+    #030715,
+    #030615,
+    #030614,
+    #030513
+  );
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+section {
+  min-height: 100dvh;
+  scroll-snap-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #51bfa6;
+  border-radius: 10px;
+}
+
+.cursor {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 1025px) {
+  .cursor {
+    display: none;
+  }
+}

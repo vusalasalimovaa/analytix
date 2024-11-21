@@ -1,0 +1,26 @@
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .sidebar-items {
+    position: relative;
+  }
+
+  .sidebar-items::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    transition: 0.3s;
+  }
+
+  .sidebar-items:hover::after {
+    width: 100%;
+  }
+}
