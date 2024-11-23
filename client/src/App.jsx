@@ -8,6 +8,9 @@ import Services from "./components/ourServices/Services";
 import Portfolio from "./components/portfolio/Portfolio";
 import WhyUs from "./components/whyUs/WhyUs";
 import PreLoader from "./components/preLoader/PreLoader";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AdminPanel from "./components/adminPanel/AdminPanel";
+import { section } from "framer-motion/client";
 
 const App = () => {
   const [mousePosition, setMousePosition] = useState({
@@ -34,8 +37,8 @@ const App = () => {
 
   const variants = {
     default: {
-      x: mousePosition.x -10,
-      y: mousePosition.y -10,
+      x: mousePosition.x - 10,
+      y: mousePosition.y - 10,
     },
     text: {
       height: 150,
@@ -51,28 +54,71 @@ const App = () => {
   // const textLeave = () => setCursorVariant("default");
 
   return (
-    <>
-    {/* <PreLoader/> */}
-      <section id="/">
-        <Navbar />
-      </section>
-      <section id="About">
-        <About />
-      </section>
-      <section id="Services">
-        <Services />
-      </section>
-      <section id="Portfolio">
-        <Portfolio />
-      </section>
-      <section>
-        <WhyUs />
-      </section>
-      <section id="Contact">
-        <Footer />
-      </section>
-      <motion.div className="cursor" variants={variants} animate='default'></motion.div>
-    </>
+    // <>
+    // {/* <PreLoader/> */}
+    //   <section id="/">
+    //     <Navbar />
+    //   </section>
+    //   <section id="About">
+    //     <About />
+    //   </section>
+    //   <section id="Services">
+    //     <Services />
+    //   </section>
+    //   <section id="Portfolio">
+    //     <Portfolio />
+    //   </section>
+    //   <section>
+    //     <WhyUs />
+    //   </section>
+    //   <section id="Contact">
+    //     <Footer />
+    //   </section>
+    //   <motion.div className="cursor" variants={variants} animate='default'></motion.div>
+    // </>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <section>
+                <Navbar id="/" />
+              </section>
+              <section id="About">
+                <About />
+              </section>
+              <section id="Services">
+                <Services />
+              </section>
+              <section id="Portfolio">
+                <Portfolio />
+              </section>
+              <section>
+                <WhyUs />
+              </section>
+              <section id="Contact">
+                <Footer />
+              </section>
+              <motion.div
+                className="cursor"
+                variants={variants}
+                animate="default"
+              ></motion.div>
+            </div>
+          }
+        />
+
+        <Route
+          path="/admin"
+          element={
+            <section>
+              <AdminPanel />
+            </section>
+          }
+        />
+      </Routes>
+    </Router>
   );
 };
 
